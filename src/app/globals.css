@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+    box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-inline: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.bannerBg {
+    background: url("../assets/banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 892px;
+    max-height: 344px;
+    object-fit: cover;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.slick-dots {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slick-dots li {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    background: #808080;
+
+}
+.slick-dots li button{
+    cursor: pointer !important;
+}
+.slick-dots .slick-active button {
+    background: red;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.slick-dots li button {
+    color: transparent;
 }
