@@ -7,9 +7,9 @@ const popins = Poppins({
 const inter = Inter({
     weight: "600"
 })
-const CommonHeading = ({ children, heading, subHeading }) => {
+const CommonHeading = ({ children, heading, subHeading,padding_top }) => {
     return (
-        <section>
+        <section style={{paddingTop : `${padding_top}`}}>
             <div className="container">
                 <div>
                     <div className="flex items-center gap-4">
