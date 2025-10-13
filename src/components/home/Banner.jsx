@@ -20,14 +20,14 @@ const Banner = () => {
     };
 
     const { products } = useContext(ProductContext)
-    const category = [...new Set(products.map(p => p.category.name))]
+    const category = [...new Set(products.map(p => p.category))]
 
 
     return (
         <section className="pt-16 md:pt-20 lg:pt-[100px] px-4 sm:px-6 lg:px-0">
             <div className="container">
                 <div className='grid grid-cols-1 xl:grid-cols-[217px_1fr] gap-6 lg:gap-[30px]'>
-                    <ul className="hidden xl:flex flex-col gap-4">
+                    <ul className="hidden xl:flex flex-col gap-4 overflow-x-auto h-[344px]">
                         {
                             category.map((item, index) => {
                                 return (

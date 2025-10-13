@@ -2,11 +2,10 @@
 import React from "react";
 import CommonHeading from "./CommonHeading";
 import Image from "next/image";
-import clothes from "../../assets/clothes.svg";
-import electronics from "../../assets/electronics.svg";
+import beauty from "../../assets/beauty.svg";
+import groceries from "../../assets/groceries.svg";
 import furniture from "../../assets/furniture.svg";
-import miscellaneous from "../../assets/miscellaneous.svg";
-import shoes from "../../assets/shoes.svg";
+import perfume from "../../assets/perfume.svg";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -17,13 +16,13 @@ const poppins = Poppins({
 const categories = [
   {
     id: 1,
-    image: electronics,
-    title: "Electronics",
+    image: beauty,
+    title: "beauty",
   },
   {
     id: 2,
-    image: clothes,
-    title: "Clothes",
+    image: groceries,
+    title: "groceries",
   },
   {
     id: 3,
@@ -32,13 +31,8 @@ const categories = [
   },
   {
     id: 4,
-    image: miscellaneous,
-    title: "Miscellaneous",
-  },
-  {
-    id: 5,
-    image: shoes,
-    title: "Shoes",
+    image: perfume,
+    title: "perfume",
   },
 ];
 

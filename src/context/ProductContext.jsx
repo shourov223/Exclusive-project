@@ -7,9 +7,9 @@ const ProductProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("https://api.escuelajs.co/api/v1/products")
+        fetch("https://dummyjson.com/products")
             .then((res) => res.json())
-            .then((data) => setProducts(data));
+            .then((data) => setProducts(data.products));
     }, []);
 
     return (

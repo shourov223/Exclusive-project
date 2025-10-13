@@ -69,12 +69,23 @@ const FlashSale = () => {
   };
 
   return (
-    <CommonHeading heading={"Flash Sales"} subHeading={"Today's"} padding_top={"100px"}>
+    <CommonHeading
+      heading={"Flash Sales"}
+      subHeading={"Today's"}
+      padding_top={"100px"}
+    >
       <Slider className="relative pt-10" {...settings}>
         {products.slice(0, 10).map((item, index) => {
           return <ProductCard key={index} element={item} />;
         })}
       </Slider>
+      <div className="flex justify-center pt-[60px]">
+        <button
+          className={`py-4 px-[48px] bg-[#DB4444] rounded-[4px] text-white text-base ${popins.className} cursor-pointer`}
+        >
+          View All Products
+        </button>
+      </div>
     </CommonHeading>
   );
 };
@@ -103,7 +114,7 @@ const PrevArrow = (props) => {
   );
 };
 
-const ProductCard = ({ element }) => {
+export const ProductCard = ({ element }) => {
   const { images, title, price } = element;
   const finalImage = images[0];
   const oldPrice = (price - (price * 10) / 100).toFixed(2);
@@ -119,6 +130,9 @@ const ProductCard = ({ element }) => {
             alt={title}
             className="w-full h-[200px] sm:h-[220px] md:h-[250px] object-cover transition-transform duration-300 group-hover:scale-105"
           />
+          <button className="absolute bottom-0 w-full py-2 bg-black text-white cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Add to cart
+          </button>
         </div>
 
         <div className="absolute top-2 sm:top-3 left-2 sm:left-3 rounded-[4px] bg-[#DB4444] py-1 px-2 sm:px-3 text-white text-xs sm:text-sm">
