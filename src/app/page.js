@@ -1,3 +1,4 @@
+import Arrival from "@/components/home/Arrival";
 import Banner from "@/components/home/Banner";
 import BestSellings from "@/components/home/BestSellings";
 import Category from "@/components/home/Category";
@@ -10,8 +11,9 @@ export default function Home() {
       <Navbar />
       <Banner />
       <FlashSale />
-      <Category/>
-      <BestSellings/>
+      <Category />
+      <BestSellings />
+      <Arrival />
     </>
   );
 }
