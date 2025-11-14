@@ -4,11 +4,12 @@ import service_2 from "../../assets/service_2.svg";
 import service_3 from "../../assets/service_3.svg";
 import { Poppins } from "next/font/google";
 
-const popins = Poppins({
-  weight: "600",
+const poppins = Poppins({
+  weight: ["400", "600"],
+  subsets: ["latin"],
 });
 
-const serviceArry = [
+const SERVICE_ITEMS = [
   {
     image: service_1,
     title: "FREE AND FAST DELIVERY",
@@ -22,44 +23,43 @@ const serviceArry = [
   {
     image: service_3,
     title: "MONEY BACK GUARANTEE",
-    text: "We reurn money within 30 days",
+    text: "We return money within 30 days",
   },
 ];
 
 const Facilities = () => {
   return (
-    <section className="pt-[70px]">
-      <div className="container">
-        <div className="px-[114px] flex items-center gap-[88px]">
-          {serviceArry.map((item, index) => {
-            return (
-              <Box
-                key={index}
-                img={item.image}
-                text={item.text}
-                title={item.title}
-              />
-            );
-          })}
+    <section className="py-12 md:py-16 lg:py-20">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16 max-w-6xl mx-auto">
+          {SERVICE_ITEMS.map((item, index) => (
+            <ServiceBox
+              key={index}
+              img={item.image}
+              text={item.text}
+              title={item.title}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-const Box = ({ img, title, text }) => {
+const ServiceBox = ({ img, title, text }) => {
   return (
-    <div className="max-w-[250px] flex items-center flex-col gap-[8px] text-center">
-      <div>
-        <Image src={img} alt="image" />
+    <div className="flex flex-col items-center gap-3 md:gap-4 text-center">
+      <div className="mb-2">
+        <Image src={img} alt={title} className="w-16 h-16 md:w-20 md:h-20" />
       </div>
       <h3
-        className={`text-[20px] leading-[28px] ${popins.className} text-black whitespace-nowrap`}
+        className={`${poppins.className} text-lg md:text-xl font-semibold text-black`}
       >
         {title}
       </h3>
-      <p className={`text-[14px] leading-[21px] ${popins.className}`}>{text}</p>
+      <p className={`${poppins.className} text-sm text-gray-600`}>{text}</p>
     </div>
   );
 };
+
 export default Facilities;
